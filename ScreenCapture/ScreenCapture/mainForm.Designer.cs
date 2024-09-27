@@ -28,12 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            newCaptureBtn = new Button();
+            savePictureBtn = new Button();
+            SuspendLayout();
+            // 
+            // newCaptureBtn
+            // 
+            newCaptureBtn.Location = new Point(46, 37);
+            newCaptureBtn.Name = "newCaptureBtn";
+            newCaptureBtn.Size = new Size(102, 52);
+            newCaptureBtn.TabIndex = 0;
+            newCaptureBtn.Text = "New Capture";
+            newCaptureBtn.UseVisualStyleBackColor = true;
+            // 
+            // savePictureBtn
+            // 
+            savePictureBtn.Location = new Point(187, 37);
+            savePictureBtn.Name = "savePictureBtn";
+            savePictureBtn.Size = new Size(102, 52);
+            savePictureBtn.TabIndex = 1;
+            savePictureBtn.Text = "Save Picture";
+            savePictureBtn.UseVisualStyleBackColor = true;
+            // 
+            // mainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(savePictureBtn);
+            Controls.Add(newCaptureBtn);
+            Name = "mainForm";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button newCaptureBtn;
+        private Button savePictureBtn;
     }
 }
