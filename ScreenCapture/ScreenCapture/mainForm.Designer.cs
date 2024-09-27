@@ -44,6 +44,7 @@
             newCaptureBtn.TabIndex = 0;
             newCaptureBtn.Text = "New Capture";
             newCaptureBtn.UseVisualStyleBackColor = true;
+            newCaptureBtn.Click += newCaptureBtn_Click;
             // 
             // savePictureBtn
             // 
