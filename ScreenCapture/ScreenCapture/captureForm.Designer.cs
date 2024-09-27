@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "captureForm";
+            imageBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)imageBox).BeginInit();
+            SuspendLayout();
+            // 
+            // imageBox
+            // 
+            imageBox.Location = new Point(12, 12);
+            imageBox.Name = "imageBox";
+            imageBox.Size = new Size(100, 100);
+            imageBox.TabIndex = 0;
+            imageBox.TabStop = false;
+            // 
+            // captureForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(imageBox);
+            Name = "captureForm";
+            Text = "captureForm";
+            ((System.ComponentModel.ISupportInitialize)imageBox).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox imageBox;
     }
 }
