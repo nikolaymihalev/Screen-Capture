@@ -1,3 +1,5 @@
+using System.Drawing.Imaging;
+
 namespace ScreenCapture
 {
     public partial class mainForm : Form
@@ -18,6 +20,7 @@ namespace ScreenCapture
             captureForm.ShowDialog();
 
             Image tempImage = Clipboard.GetImage();
+            picScreenshot.Image = tempImage;
 
             this.Show();
         }
@@ -30,6 +33,23 @@ namespace ScreenCapture
 
             if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
                 return;
+
+            try
+            {
+                if (picScreenshot.Image != null) 
+                {
+                    picScreenshot.Image.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
+
+                    MessageBox.Show(this, $"Saved Screenshot to {saveFileDialog.FileName}", 
+                        "Saved", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

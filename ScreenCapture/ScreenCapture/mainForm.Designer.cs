@@ -30,9 +30,9 @@
         {
             newCaptureBtn = new Button();
             savePictureBtn = new Button();
-            mainImageBox = new PictureBox();
+            picScreenshot = new PictureBox();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)mainImageBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picScreenshot).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,14 +56,14 @@
             savePictureBtn.UseVisualStyleBackColor = true;
             savePictureBtn.Click += savePictureBtn_Click;
             // 
-            // mainImageBox
+            // picScreenshot
             // 
-            mainImageBox.Dock = DockStyle.Fill;
-            mainImageBox.Location = new Point(0, 0);
-            mainImageBox.Name = "mainImageBox";
-            mainImageBox.Size = new Size(800, 450);
-            mainImageBox.TabIndex = 2;
-            mainImageBox.TabStop = false;
+            picScreenshot.Dock = DockStyle.Fill;
+            picScreenshot.Location = new Point(0, 0);
+            picScreenshot.Name = "picScreenshot";
+            picScreenshot.Size = new Size(800, 450);
+            picScreenshot.TabIndex = 2;
+            picScreenshot.TabStop = false;
             // 
             // panel1
             // 
@@ -81,10 +81,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
-            Controls.Add(mainImageBox);
+            Controls.Add(picScreenshot);
             Name = "mainForm";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)mainImageBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picScreenshot).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -93,7 +93,7 @@
 
         private Button newCaptureBtn;
         private Button savePictureBtn;
-        private PictureBox mainImageBox;
+        private PictureBox picScreenshot;
         private Panel panel1;
     }
 }
