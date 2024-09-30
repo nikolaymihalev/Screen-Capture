@@ -1,4 +1,5 @@
-﻿namespace ScreenCapture
+﻿using System.Drawing.Imaging;
+namespace ScreenCapture
 {
     public partial class captureForm : Form
     {
@@ -25,7 +26,22 @@
 
         private void captureForm_Load(object sender, EventArgs e)
         {
+            this.Hide();
 
+            Bitmap printScreen = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+
+            Graphics graphics = Graphics.FromImage(printScreen as Image);
+
+            graphics.CopyFromScreen(0, 0, 0, 0, printScreen.Size);
+
+            using (MemoryStream ms = new MemoryStream()) 
+            {
+                printScreen.Save(ms, ImageFormat.Bmp);
+                picCapture.Size = new System.Drawing.Size(this.Width, this.Height);
+                picCapture.Image = Image.FromStream(ms);
+            }
+
+            this.Show();
         }
     }
 }
