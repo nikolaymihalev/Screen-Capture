@@ -34,7 +34,7 @@ namespace ScreenCapture
 
             graphics.CopyFromScreen(0, 0, 0, 0, printScreen.Size);
 
-            using (MemoryStream ms = new MemoryStream()) 
+            using (MemoryStream ms = new MemoryStream())
             {
                 printScreen.Save(ms, ImageFormat.Bmp);
                 picCapture.Size = new System.Drawing.Size(this.Width, this.Height);
@@ -42,6 +42,26 @@ namespace ScreenCapture
             }
 
             this.Show();
+
+            Cursor = Cursors.Cross;
+        }
+
+        private void picCapture_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!start)
+            {
+                if (e.Button == System.Windows.Forms.MouseButtons.Left) 
+                {
+                    selectX = e.X;
+                    selectY = e.Y;
+                    selectPen = new Pen(Color.Red, 4);
+                    selectPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+                }
+
+                picCapture.Refresh();
+
+                start = true;
+            }
         }
     }
 }

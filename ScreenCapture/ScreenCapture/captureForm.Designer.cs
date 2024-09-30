@@ -39,6 +39,7 @@
             picCapture.Size = new Size(100, 100);
             picCapture.TabIndex = 0;
             picCapture.TabStop = false;
+            picCapture.MouseDown += picCapture_MouseDown;
             // 
             // captureForm
             // 
