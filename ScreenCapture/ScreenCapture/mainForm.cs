@@ -21,5 +21,15 @@ namespace ScreenCapture
 
             this.Show();
         }
+
+        private void savePictureBtn_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Jpeg File|*.jpg";
+            saveFileDialog.FileName = "Untitled";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
+                return;
+        }
     }
 }

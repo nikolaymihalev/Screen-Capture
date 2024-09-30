@@ -54,6 +54,7 @@
             savePictureBtn.TabIndex = 1;
             savePictureBtn.Text = "Save Picture";
             savePictureBtn.UseVisualStyleBackColor = true;
+            savePictureBtn.Click += savePictureBtn_Click;
             // 
             // mainImageBox
             // 
