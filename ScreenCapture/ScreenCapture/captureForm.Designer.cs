@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            imageBox = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)imageBox).BeginInit();
+            picCapture = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picCapture).BeginInit();
             SuspendLayout();
             // 
-            // imageBox
+            // picCapture
             // 
-            imageBox.Location = new Point(12, 12);
-            imageBox.Name = "imageBox";
-            imageBox.Size = new Size(100, 100);
-            imageBox.TabIndex = 0;
-            imageBox.TabStop = false;
+            picCapture.Location = new Point(12, 12);
+            picCapture.Name = "picCapture";
+            picCapture.Size = new Size(100, 100);
+            picCapture.TabIndex = 0;
+            picCapture.TabStop = false;
             // 
             // captureForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(imageBox);
+            Controls.Add(picCapture);
             Name = "captureForm";
             Text = "captureForm";
             Load += captureForm_Load;
-            ((System.ComponentModel.ISupportInitialize)imageBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCapture).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox imageBox;
+        private PictureBox picCapture;
     }
 }
