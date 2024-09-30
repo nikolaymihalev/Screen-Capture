@@ -48,6 +48,7 @@
             Controls.Add(imageBox);
             Name = "captureForm";
             Text = "captureForm";
+            Load += captureForm_Load;
             ((System.ComponentModel.ISupportInitialize)imageBox).EndInit();
             ResumeLayout(false);
         }
