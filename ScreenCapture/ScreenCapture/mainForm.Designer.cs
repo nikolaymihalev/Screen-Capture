@@ -33,9 +33,11 @@
             savePictureBtn = new Button();
             picScreenshot = new PictureBox();
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picScreenshot).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -59,12 +61,16 @@
             // 
             // savePictureBtn
             // 
-            savePictureBtn.Location = new Point(206, 0);
+            savePictureBtn.BackColor = SystemColors.MenuBar;
+            savePictureBtn.FlatAppearance.BorderSize = 0;
+            savePictureBtn.FlatAppearance.MouseOverBackColor = SystemColors.ButtonHighlight;
+            savePictureBtn.FlatStyle = FlatStyle.Flat;
+            savePictureBtn.Location = new Point(211, 0);
             savePictureBtn.Name = "savePictureBtn";
             savePictureBtn.Size = new Size(102, 52);
             savePictureBtn.TabIndex = 1;
             savePictureBtn.Text = "Save Picture";
-            savePictureBtn.UseVisualStyleBackColor = true;
+            savePictureBtn.UseVisualStyleBackColor = false;
             savePictureBtn.Click += savePictureBtn_Click;
             // 
             // picScreenshot
@@ -79,6 +85,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.MenuBar;
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(savePictureBtn);
             panel1.Controls.Add(newCaptureBtn);
@@ -87,6 +94,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 54);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(167, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(48, 52);
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -111,6 +129,7 @@
             Text = "Screen Capture";
             ((System.ComponentModel.ISupportInitialize)picScreenshot).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -122,5 +141,6 @@
         private PictureBox picScreenshot;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

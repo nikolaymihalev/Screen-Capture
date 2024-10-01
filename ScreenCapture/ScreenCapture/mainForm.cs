@@ -36,13 +36,13 @@ namespace ScreenCapture
 
             try
             {
-                if (picScreenshot.Image != null) 
+                if (picScreenshot.Image != null)
                 {
                     picScreenshot.Image.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
 
-                    MessageBox.Show(this, $"Saved Screenshot to {saveFileDialog.FileName}", 
-                        "Saved", 
-                        MessageBoxButtons.OK, 
+                    MessageBox.Show(this, $"Saved Screenshot to {saveFileDialog.FileName}",
+                        "Saved",
+                        MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
