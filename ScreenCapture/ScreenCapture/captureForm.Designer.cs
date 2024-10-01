@@ -41,6 +41,7 @@
             picCapture.TabStop = false;
             picCapture.MouseDown += picCapture_MouseDown;
             picCapture.MouseMove += picCapture_MouseMove;
+            picCapture.MouseUp += picCapture_MouseUp;
             // 
             // captureForm
             // 

@@ -69,7 +69,7 @@ namespace ScreenCapture
             if (picCapture.Image == null)
                 return;
 
-            if (start) 
+            if (start)
             {
                 picCapture.Refresh();
 
@@ -79,6 +79,22 @@ namespace ScreenCapture
                 picCapture.CreateGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 picCapture.CreateGraphics().DrawRectangle(selectPen, selectX, selectY, selectWidth, selectHeight);
             }
+        }
+
+        private void picCapture_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (picCapture.Image == null)
+                return;
+
+            if (e.Button == MouseButtons.Left) 
+            {
+                picCapture.Refresh();
+                selectWidth = e.X - selectX;
+                selectHeight = e.Y - selectY;
+                picCapture.CreateGraphics().DrawRectangle(selectPen, selectX, selectY, selectWidth, selectHeight);
+            }
+
+            start = false;
         }
     }
 }
