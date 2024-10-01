@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             newCaptureBtn = new Button();
             savePictureBtn = new Button();
             picScreenshot = new PictureBox();
@@ -82,8 +83,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Controls.Add(picScreenshot);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "mainForm";
-            Text = "Form1";
+            Text = "Screen Capture";
             ((System.ComponentModel.ISupportInitialize)picScreenshot).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
