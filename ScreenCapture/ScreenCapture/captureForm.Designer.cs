@@ -40,6 +40,7 @@
             picCapture.TabIndex = 0;
             picCapture.TabStop = false;
             picCapture.MouseDown += picCapture_MouseDown;
+            picCapture.MouseMove += picCapture_MouseMove;
             // 
             // captureForm
             // 

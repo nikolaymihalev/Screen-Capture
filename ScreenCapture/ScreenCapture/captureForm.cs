@@ -50,7 +50,7 @@ namespace ScreenCapture
         {
             if (!start)
             {
-                if (e.Button == System.Windows.Forms.MouseButtons.Left) 
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
                 {
                     selectX = e.X;
                     selectY = e.Y;
@@ -61,6 +61,23 @@ namespace ScreenCapture
                 picCapture.Refresh();
 
                 start = true;
+            }
+        }
+
+        private void picCapture_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (picCapture.Image == null)
+                return;
+
+            if (start) 
+            {
+                picCapture.Refresh();
+
+                selectWidth = e.X - selectX;
+                selectHeight = e.Y - selectY;
+
+                picCapture.CreateGraphics().SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                picCapture.CreateGraphics().DrawRectangle(selectPen, selectX, selectY, selectWidth, selectHeight);
             }
         }
     }
