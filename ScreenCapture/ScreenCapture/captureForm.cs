@@ -118,6 +118,8 @@ namespace ScreenCapture
 
                 Clipboard.SetImage(_image);
             }
+
+            this.Close();
         }
     }
 }
