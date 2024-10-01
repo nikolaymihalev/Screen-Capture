@@ -95,6 +95,29 @@ namespace ScreenCapture
             }
 
             start = false;
+
+            SaveToClipboard();
+        }
+
+        private void SaveToClipboard() 
+        {
+            if (selectWidth > 0) 
+            {
+                Rectangle rect = new Rectangle(selectX, selectY, selectWidth, selectHeight);
+
+                Bitmap originalImage = new Bitmap(picCapture.Image, picCapture.Width, picCapture.Height);
+
+                Bitmap _image = new Bitmap(selectWidth, selectHeight);
+                
+                Graphics gr = Graphics.FromImage(_image);
+
+                gr.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                gr.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+                gr.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                gr.DrawImage(originalImage, 0, 0, rect, GraphicsUnit.Pixel);
+
+                Clipboard.SetImage(_image);
+            }
         }
     }
 }
