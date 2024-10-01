@@ -33,23 +33,33 @@
             savePictureBtn = new Button();
             picScreenshot = new PictureBox();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)picScreenshot).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // newCaptureBtn
             // 
-            newCaptureBtn.Location = new Point(17, 20);
+            newCaptureBtn.BackgroundImageLayout = ImageLayout.Zoom;
+            newCaptureBtn.FlatAppearance.BorderSize = 0;
+            newCaptureBtn.FlatAppearance.MouseOverBackColor = SystemColors.ButtonHighlight;
+            newCaptureBtn.FlatStyle = FlatStyle.Flat;
+            newCaptureBtn.Font = new Font("Segoe UI", 9F);
+            newCaptureBtn.ForeColor = SystemColors.ControlText;
+            newCaptureBtn.ImageAlign = ContentAlignment.TopLeft;
+            newCaptureBtn.Location = new Point(0, 0);
             newCaptureBtn.Name = "newCaptureBtn";
-            newCaptureBtn.Size = new Size(102, 52);
+            newCaptureBtn.Size = new Size(130, 52);
             newCaptureBtn.TabIndex = 0;
             newCaptureBtn.Text = "New Capture";
+            newCaptureBtn.TextAlign = ContentAlignment.MiddleRight;
             newCaptureBtn.UseVisualStyleBackColor = true;
             newCaptureBtn.Click += newCaptureBtn_Click;
             // 
             // savePictureBtn
             // 
-            savePictureBtn.Location = new Point(154, 20);
+            savePictureBtn.Location = new Point(206, 0);
             savePictureBtn.Name = "savePictureBtn";
             savePictureBtn.Size = new Size(102, 52);
             savePictureBtn.TabIndex = 1;
@@ -68,13 +78,26 @@
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.MenuBar;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(savePictureBtn);
             panel1.Controls.Add(newCaptureBtn);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 100);
+            panel1.Size = new Size(800, 54);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 52);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // mainForm
             // 
@@ -88,6 +111,7 @@
             Text = "Screen Capture";
             ((System.ComponentModel.ISupportInitialize)picScreenshot).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -97,5 +121,6 @@
         private Button savePictureBtn;
         private PictureBox picScreenshot;
         private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }
